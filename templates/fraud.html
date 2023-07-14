@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Details</title>
+    <style>
+        body {
+            background-image: url("/static/images/background-image.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h2>Transaction Details</h2>
+    <form method="POST" action="/pred_fraud">
+        <label for="step">Step:</label>
+        <input type="number" name="step" id="step" required><br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" required><br><br>
+
+        <label for="oldbalanceOrg">Old Balance (Origin):</label>
+        <input type="number" name="oldbalanceOrg" id="oldbalanceOrg" required><br><br>
+
+        <label for="newbalanceOrig">New Balance (Origin):</label>
+        <input type="number" name="newbalanceOrig" id="newbalanceOrig" required><br><br>
+
+        <label for="oldbalanceDest">Old Balance (Destination):</label>
+        <input type="number" name="oldbalanceDest" id="oldbalanceDest" required><br><br>
+
+        <label for="newbalanceDest">New Balance (Destination):</label>
+        <input type="number" name="newbalanceDest" id="newbalanceDest" required><br><br>
+        
+        <label>Transaction Type:</label>
+        <select name="types">
+            <option value="CASH_IN">CASH_IN</option>
+            <option value="CASH_OUT">CASH_OUT</option>
+            <option value="TRANSFER">TRANSFER</option>
+            <option value="PAYMENT">PAYMENT</option>
+            <option value="DEBIT">DEBIT</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+
+        <h4><strong>The predicted outcome of the online transaction is: <b>{{ prediction }} </b></strong></h4>
+
+        
+    </form>
+</body>
+</html>
